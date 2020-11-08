@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:app/screens/FormWithDateSaving.dart';
 
 class Home extends StatefulWidget {
-  String _xd = 'xddd';
-
   var _screens = [
-    FormWithDateSaving('Formularz  z zapisem do bazy'),
-    FormWithDateSaving('Formularz  z zapisem do bazy'),
+    FormWithDateSaving('Formularz z zapisem do bazy'),
+    FormWithDateSaving('Formularz z zapisem do bazy'),
   ];
 
   @override
@@ -20,7 +18,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
         appBar: AppBar(
           // backgroundColor: Colors.blue[900],
-          title: const Text('Home8'),
+          title: const Text('Home'),
           automaticallyImplyLeading: false,
         ),
         body: Center(
@@ -47,37 +45,3 @@ class _HomeState extends State<Home> {
         ));
   }
 }
-
-// class _HomeState extends State<Home> {
-//   String lol = 'FormWithDateSaving';
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         appBar: AppBar(
-//           // backgroundColor: Colors.blue[900],
-//           title: const Text('Home'),
-//           automaticallyImplyLeading: false, //hide back button
-//         ),
-//         body: Center(
-//             child: ListView(
-//           children: <Widget>[
-//             FlatButton(
-//               onPressed: () {
-//                 Navigator.push(
-//                   context,
-//                   MaterialPageRoute(
-//                       builder: (context) => FormWithDateSaving(
-//                           'Formularz ${lol} ${widget._xd} z zapisem do bazy')),
-//                 );
-//               },
-//               child: Padding(
-//                   padding: const EdgeInsets.all(15.0),
-//                   child: Text(
-//                     'fsafsa',
-//                     style: TextStyle(fontSize: 18),
-//                   )),
-//             ),
-//           ],
-//         )));
-//   }
-// }

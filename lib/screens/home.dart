@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'screens/home.dart';
-import 'package:app/screens/FormWithDateSaving.dart';
+import 'package:app/screens/FormWithDateSaving/FormWithDateSaving.dart';
 
 class Home extends StatefulWidget {
   var _screens = [
@@ -27,19 +27,35 @@ class _HomeState extends State<Home> {
               padding: EdgeInsets.all(15.0),
               itemBuilder: (BuildContext context, int index) {
                 var pages = widget._screens;
+
                 return FlatButton(
+                  // color: Colors.blue,
+                  // textColor: Colors.white,
+
                   onPressed: () {
-                    Navigator.pushReplacement(context,
+                    Navigator.push(context,
                         MaterialPageRoute(builder: (context) => pages[index]));
                     // builder: (context) => FormWithDateSaving( 'Formularz  ${widget._xd} z zapisem do bazy')));
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Text(
-                      '${pages[index]}',
-                      style: TextStyle(fontSize: 18),
+
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text(
+                        '${pages[index]}',
+                        style: TextStyle(fontSize: 18),
+                      ),
                     ),
                   ),
+
+                  // child: Padding(
+                  //   padding: const EdgeInsets.all(15.0),
+                  //   child: Text(
+                  //     '${pages[index]}',
+                  //     style: TextStyle(fontSize: 18),
+                  //   ),
+                  // ),
                 );
               }),
         ));

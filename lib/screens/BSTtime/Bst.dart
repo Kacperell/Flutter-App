@@ -17,7 +17,6 @@ class BST {
 
   add(val) {
     Node newNode = Node(val);
-    print(val);
     if (root == null) {
       root = newNode;
       return this;

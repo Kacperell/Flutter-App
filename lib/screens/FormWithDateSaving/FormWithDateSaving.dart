@@ -50,8 +50,6 @@ class _FormWithDateSavingState extends State<FormWithDateSaving> {
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         final notes = snapshot.data;
-                        print('-----notes---------');
-                        print(notes);
                         return ListView.builder(
                           // scrollDirection: Axis.vertical,
                           shrinkWrap: true,
@@ -92,7 +90,10 @@ class FormNote extends StatelessWidget {
       child: Column(
         children: [
           TextField(
-            decoration: InputDecoration(hintText: 'Wprowadź notatkę'),
+            decoration: InputDecoration(
+              // hintText: 'Wprowadź notatkę',
+              labelText: 'Wprowadź notatkę',
+            ),
             controller: myController,
           ),
           FlatButton(

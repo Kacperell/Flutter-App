@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 // import 'screens/home.dart';
 import 'package:app/screens/FormWithDateSaving/FormWithDateSaving.dart';
+import 'package:app/screens/BSTtime/Bst.dart';
 
 class Home extends StatefulWidget {
   var _screens = [
     FormWithDateSaving('Formularz z zapisem do bazy'),
+    Bst('Binarne drzewo poszukiwań - Pomiar czasu'),
     FormWithDateSaving('Formularz z zapisem do bazy'),
   ];
 

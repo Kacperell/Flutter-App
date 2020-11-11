@@ -5,8 +5,6 @@ final String table = 'Notes';
 final String columnId = '_id';
 final String columnTitle = 'note';
 
-// final String tableTodo = 'todo';
-
 class NotesProvider {
   static Database db;
 
@@ -15,13 +13,6 @@ class NotesProvider {
         version: 1, onCreate: (db, version) async {
       print("create dbbb!");
 
-      // db.execute('''
-      //     create table Notes(
-      //       id integer primary key autoincrement,
-      //       note text ,
-      //     );
-      //            ''');
-
       await db.execute('''
         create table $table ( 
           $columnId integer primary key autoincrement, 
@@ -29,9 +20,6 @@ class NotesProvider {
         ''');
 
       db.insert('$table', {'$columnTitle': 'Example'});
-
-      // var todo = {columnTitle: 'xdd'};
-      // await db.insert(table, todo);
     });
   }
 
@@ -46,14 +34,8 @@ class NotesProvider {
     }
     var notes = await db.rawQuery('SELECT * FROM "Notes"');
     print('-----DBNOTES---------');
-    print(notes);
-    // return await notes;
+
     return await db.rawQuery('SELECT * FROM "Notes"');
-    // List<Map> notes = await db.query(
-    //   table,
-    //   columns: [columnId, columnTitle],
-    // );
-    // return notes;
   }
 
   Future close() async => db.close();

@@ -3,13 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:app/screens/FormWithDateSaving/FormWithDateSaving.dart';
 import 'package:app/screens/BSTtime/Bst.dart';
 import 'package:app/screens/Camera/Camera.dart';
+import 'package:app/screens/GPS/GPS.dart';
 
 class Home extends StatefulWidget {
-  var _screens = [
-    FormWithDateSaving('Formularz z zapisem do bazy'),
-    Bst('Binarne drzewo poszukiwań - Pomiar czasu'),
-    Camera('Dostęp do aparatu'),
-    FormWithDateSaving('Formularz z zapisem do bazy'),
+  List _screens = [
+    [
+      FormWithDateSaving('Formularz z zapisem do bazy'),
+      'Formularz z zapisem do bazy'
+    ],
+    [
+      Bst('Binarne drzewo poszukiwań - Pomiar czasu'),
+      'Binarne drzewo poszukiwań - Pomiar czasu'
+    ],
+    [Camera('Dostęp do aparatu'), 'Dostęp do aparatu'],
+    [GPS('Lokalizacja na mapie'), 'Lokalizacja na mapie'],
   ];
 
   @override
@@ -21,7 +28,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // backgroundColor: Colors.blue[900],
           title: const Text('Home'),
           automaticallyImplyLeading: false,
         ),
@@ -31,35 +37,23 @@ class _HomeState extends State<Home> {
               padding: EdgeInsets.all(15.0),
               itemBuilder: (BuildContext context, int index) {
                 var pages = widget._screens;
-
                 return FlatButton(
-                  // color: Colors.blue,
-                  // textColor: Colors.white,
-
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => pages[index]));
-                    // builder: (context) => FormWithDateSaving( 'Formularz  ${widget._xd} z zapisem do bazy')));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => pages[index][0]));
                   },
-
                   child: Align(
                     alignment: Alignment.bottomLeft,
                     child: Padding(
-                      padding: const EdgeInsets.all(5.0),
+                      padding: const EdgeInsets.all(1.0),
                       child: Text(
-                        '${pages[index]}',
+                        '${pages[index][1]}',
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
                   ),
-
-                  // child: Padding(
-                  //   padding: const EdgeInsets.all(15.0),
-                  //   child: Text(
-                  //     '${pages[index]}',
-                  //     style: TextStyle(fontSize: 18),
-                  //   ),
-                  // ),
                 );
               }),
         ));

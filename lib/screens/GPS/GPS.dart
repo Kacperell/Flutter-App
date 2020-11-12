@@ -84,7 +84,7 @@ class _GPSState extends State<GPS> {
                   point: currentLocation,
                   builder: (ctx) => new Container(
                     child: Image.network(
-                        'https://lh3.googleusercontent.com/proxy/E-6g4e1g62aCNjdHJ3p__AdwwRvc5cMQGZJe4sVkXl05Kudcjm5RxHSrqKSsFjw2WgqLribN9MN2DK0pS9A7kOWUR2ZKsp3gDQOMg2kyfJFWRVEo57qpID681rmYeLE'),
+                        'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png'),
                     // child: new FlutterLogo(),
                   ),
                 ),

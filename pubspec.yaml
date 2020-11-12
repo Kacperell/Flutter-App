@@ -29,6 +29,7 @@ dependencies:
   flutter_map:
   location: ^3.0.2
   map_controller: ^0.8.0
+  sensors: ^0.4.2+6
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -30,6 +30,10 @@ dependencies:
   location: ^3.0.2
   map_controller: ^0.8.0
   sensors: ^0.4.2+6
+  # flutter_sound: ^6.4.2+1
+  record_mp3:
+  permission_handler: ^5.0.1+1
+  audioplayers: ^0.16.2
 
 
   # The following adds the Cupertino Icons font to your application.

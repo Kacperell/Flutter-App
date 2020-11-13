@@ -5,6 +5,7 @@ import 'package:app/screens/BSTtime/Bst.dart';
 import 'package:app/screens/Camera/Camera.dart';
 import 'package:app/screens/GPS/GPS.dart';
 import 'package:app/screens/Accelerometer/Accelerometer.dart';
+import 'package:app/screens/AudioRecorder/AudioRecorder.dart';
 
 class Home extends StatefulWidget {
   List _screens = [
@@ -18,7 +19,8 @@ class Home extends StatefulWidget {
     ],
     [Camera('Dostęp do aparatu'), 'Dostęp do aparatu'],
     [GPS('Lokalizacja na mapie'), 'Lokalizacja na mapie'],
-    [Accelerometer('Akcelerometr'), 'Akcelerometr'],
+    [Accelerometer('Akcelerometr i żyroskop'), 'Akcelerometr i żyroskop'],
+    [AudioRecorder('Nagranie dźwieku'), 'Nagranie dźwieku'],
   ];
 
   @override

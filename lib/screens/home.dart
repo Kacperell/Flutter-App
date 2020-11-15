@@ -7,6 +7,7 @@ import 'package:app/screens/GPS/GPS.dart';
 import 'package:app/screens/Accelerometer/Accelerometer.dart';
 import 'package:app/screens/AudioRecorder/AudioRecorder.dart';
 import 'package:app/screens/VideoYT/VideoYT.dart';
+import 'package:app/screens/ListViewScreen/ListViewScreen.dart';
 
 class Home extends StatefulWidget {
   List _screens = [
@@ -23,6 +24,7 @@ class Home extends StatefulWidget {
     [Accelerometer('Akcelerometr i żyroskop'), 'Akcelerometr i żyroskop'],
     [AudioRecorder('Nagranie dźwieku'), 'Nagranie dźwieku'],
     [VideoYT('Obsługa multimediów'), 'Obsługa multimediów'],
+    [ListViewScreen('Dynamiczna lista'), 'Dynamiczna lista'],
   ];
 
   @override
@@ -33,35 +35,34 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Home'),
-          automaticallyImplyLeading: false,
-        ),
-        body: Center(
-          child: ListView.builder(
-              itemCount: widget._screens.length,
-              padding: EdgeInsets.all(15.0),
-              itemBuilder: (BuildContext context, int index) {
-                var pages = widget._screens;
-                return FlatButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => pages[index][0]));
-                  },
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.all(1.0),
-                      child: Text(
-                        '${pages[index][1]}',
-                        style: TextStyle(fontSize: 18),
-                      ),
+      appBar: AppBar(
+        title: const Text('Home'),
+        automaticallyImplyLeading: false,
+      ),
+      body: Center(
+        child: ListView.builder(
+            itemCount: widget._screens.length,
+            padding: EdgeInsets.all(15.0),
+            itemBuilder: (BuildContext context, int index) {
+              var pages = widget._screens;
+              return FlatButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => pages[index][0]));
+                },
+                child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: Text(
+                      '${pages[index][1]}',
+                      style: TextStyle(fontSize: 18),
                     ),
                   ),
-                );
-              }),
-        ));
+                ),
+              );
+            }),
+      ),
+    );
   }
 }

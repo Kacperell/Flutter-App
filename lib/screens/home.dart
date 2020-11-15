@@ -6,6 +6,7 @@ import 'package:app/screens/Camera/Camera.dart';
 import 'package:app/screens/GPS/GPS.dart';
 import 'package:app/screens/Accelerometer/Accelerometer.dart';
 import 'package:app/screens/AudioRecorder/AudioRecorder.dart';
+import 'package:app/screens/VideoYT/VideoYT.dart';
 
 class Home extends StatefulWidget {
   List _screens = [
@@ -21,6 +22,7 @@ class Home extends StatefulWidget {
     [GPS('Lokalizacja na mapie'), 'Lokalizacja na mapie'],
     [Accelerometer('Akcelerometr i żyroskop'), 'Akcelerometr i żyroskop'],
     [AudioRecorder('Nagranie dźwieku'), 'Nagranie dźwieku'],
+    [VideoYT('Obsługa multimediów'), 'Obsługa multimediów'],
   ];
 
   @override

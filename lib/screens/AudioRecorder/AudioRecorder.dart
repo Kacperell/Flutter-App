@@ -56,10 +56,6 @@ class _AudioRecorderState extends State<AudioRecorder> {
                 ),
               ),
               Container(
-                // margin: EdgeInsets.only(top: 30),
-                // alignment: AlignmentDirectional.center,
-                // width: 100,
-                // height: 50,
                 child: isComplete && recordFilePath != null
                     ? Container(
                         width: 150.0,
@@ -72,10 +68,6 @@ class _AudioRecorderState extends State<AudioRecorder> {
                           child: Text('Odtwórz'),
                         ),
                       )
-                    // ? Text(
-                    //     "Odtwórz",
-                    //     style: TextStyle(color: Colors.red, fontSize: 20),
-                    //   )
                     : Container(),
               ),
             ]),

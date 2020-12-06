@@ -16,16 +16,34 @@ class NotesProvider {
       await db.execute('''
         create table $table ( 
           $columnId integer primary key autoincrement, 
-          $columnTitle text not null)
+          $columnTitle text not null,
+          selectValue text,
+          checkboxValue text,
+          radioValue text 
+          )
         ''');
 
-      db.insert('$table', {'$columnTitle': 'Example'});
+      db.insert('$table', {
+        '$columnTitle': 'Example',
+        'selectValue': 'C',
+        'checkboxValue': 'check1',
+        'radioValue': 'radio2',
+      });
     });
   }
 
-  static Future insertNote(note) async {
+  static Future insertNote(
+      noteText, noteSelect, noteCheckbox, noteRadio) async {
     // await db.insert('Notes', word);
-    db.insert('$table', {'$columnTitle': note});
+
+    // db.insert('$table', {'$columnTitle': noteText});
+
+    db.insert('$table', {
+      '$columnTitle': noteText,
+      'selectValue': noteSelect,
+      'checkboxValue': noteCheckbox,
+      'radioValue': noteRadio,
+    });
   }
 
   static Future getNotes() async {

@@ -9,6 +9,7 @@ import 'package:app/screens/AudioRecorder/AudioRecorder.dart';
 import 'package:app/screens/VideoYT/VideoYT.dart';
 import 'package:app/screens/ListViewScreen/ListViewScreen.dart';
 import 'package:app/screens/Modal/Modal.dart';
+import 'package:app/screens/Alert/Alert.dart';
 
 class Home extends StatefulWidget {
   List _screens = [
@@ -27,6 +28,7 @@ class Home extends StatefulWidget {
     [VideoYT('Obsługa multimediów'), 'Obsługa multimediów'],
     [ListViewScreen('Dynamiczna lista'), 'Dynamiczna lista'],
     [Modal('Modal'), 'Modal'],
+    [Alert('Alert'), 'Alert'],
   ];
 
   @override

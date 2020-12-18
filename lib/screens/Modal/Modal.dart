@@ -5,12 +5,27 @@ class Modal extends StatefulWidget {
   Modal(this._title);
 
   @override
-  _ModalState createState() => _ModalState();
+  _ModalState createState() {
+    print('createState');
+    return _ModalState();
+  }
+
+  // @override
+  // _ModalState createState() => _ModalState();
+
 }
 
 class _ModalState extends State<Modal> {
   @override
+  initState() {
+    super.initState();
+    print('initState');
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print("build ");
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget._title),

@@ -8,6 +8,7 @@ import 'package:app/screens/Accelerometer/Accelerometer.dart';
 import 'package:app/screens/AudioRecorder/AudioRecorder.dart';
 import 'package:app/screens/VideoYT/VideoYT.dart';
 import 'package:app/screens/ListViewScreen/ListViewScreen.dart';
+import 'package:app/screens/ComponentsScreen/ComponentsScreen.dart';
 import 'package:app/screens/Modal/Modal.dart';
 import 'package:app/screens/Alert/Alert.dart';
 
@@ -27,6 +28,7 @@ class Home extends StatefulWidget {
     [AudioRecorder('Nagranie dźwieku'), 'Nagranie dźwieku'],
     [VideoYT('Obsługa multimediów'), 'Obsługa multimediów'],
     [ListViewScreen('Dynamiczna lista'), 'Dynamiczna lista'],
+    [ComponentsScreen('Komponenty'), 'Komponenty'],
     [Modal('Modal'), 'Modal'],
     [Alert('Alert'), 'Alert'],
   ];

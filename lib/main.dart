@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'screens/home.dart';
 import 'package:app/screens/home.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(MyApp());

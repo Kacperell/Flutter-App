@@ -12,6 +12,7 @@ import 'package:app/screens/ComponentsScreen/ComponentsScreen.dart';
 import 'package:app/screens/AnimationsScreen/AnimationsScreen.dart';
 import 'package:app/screens/Modal/Modal.dart';
 import 'package:app/screens/Alert/Alert.dart';
+import 'package:app/screens/DataSharing/DataSharginScreen.dart';
 
 class Home extends StatefulWidget {
   List _screens = [
@@ -33,6 +34,7 @@ class Home extends StatefulWidget {
     [ComponentsScreen('Komponenty'), 'Komponenty'],
     [Modal('Modal'), 'Modal'],
     [Alert('Alert'), 'Alert'],
+    [DataSharginScreen('Wspóldzielanie danych'), 'Wspóldzielanie danych'],
   ];
 
   @override

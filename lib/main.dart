@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-// import 'screens/home.dart';
 import 'package:app/screens/home.dart';
-// import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FlutterDownloader.initialize(debug: true);
   runApp(MyApp());
 }
 

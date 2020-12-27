@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'screens/home.dart';
 import 'package:app/screens/FormWithDateSaving/FormWithDateSaving.dart';
+import 'package:app/screens/DownloadingFiles/DownloadingFiles.dart';
 import 'package:app/screens/BSTtime/Bst.dart';
 import 'package:app/screens/Camera/Camera.dart';
 import 'package:app/screens/GPS/GPS.dart';
@@ -20,6 +21,7 @@ class Home extends StatefulWidget {
       FormWithDateSaving('Formularz z zapisem do bazy'),
       'Formularz z zapisem do bazy'
     ],
+    [DownloadingFiles('Pobieranie plików'), 'Pobieranie plików'],
     [
       Bst('Binarne drzewo poszukiwań - Pomiar czasu'),
       'Binarne drzewo poszukiwań - Pomiar czasu'

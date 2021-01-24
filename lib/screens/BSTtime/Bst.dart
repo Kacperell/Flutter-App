@@ -64,20 +64,14 @@ class Bst extends StatefulWidget {
 
 class _BstState extends State<Bst> {
   String time = 'Czas wykonania:';
-
   void startBst() {
     BST tree = BST();
-
     var rng = new Random();
-
     final stopwatch = Stopwatch()..start();
-
     print('stopwatch ${stopwatch}');
-
     for (int i = 0; i < numbersToBst; i++) {
       tree.add(rng.nextInt(numbersToBst));
     }
-
     setState(() {
       time = 'Czas wykonania: ${stopwatch.elapsed}';
     });
@@ -111,7 +105,6 @@ class _BstState extends State<Bst> {
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(5),
-                  // padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: Text('Start'),
                 ),
               ),

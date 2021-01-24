@@ -10,9 +10,6 @@ class Modal extends StatefulWidget {
     return _ModalState();
   }
 
-  // @override
-  // _ModalState createState() => _ModalState();
-
 }
 
 class _ModalState extends State<Modal> {

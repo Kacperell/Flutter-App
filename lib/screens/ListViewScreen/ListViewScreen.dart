@@ -70,7 +70,6 @@ class _ListViewScreenState extends State<ListViewScreen> {
               itemCount: listElements.length,
               padding: EdgeInsets.all(10.0),
               itemBuilder: (BuildContext context, int index) {
-                // var pages = widget.listElements;
                 return Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: Row(

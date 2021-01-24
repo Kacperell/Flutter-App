@@ -15,13 +15,10 @@ class GPS extends StatefulWidget {
 class _GPSState extends State<GPS> {
   MapController mapController;
   LatLng currentLocation = LatLng(51.4285, 14.5590);
-  // LatLng currentLocation = LatLng(53.4285, 14.5590);
-
   void findMe() async {
     Location location = new Location();
     bool _serviceEnabled;
     PermissionStatus _permissionGranted;
-    // LocationData _locationData;
     _serviceEnabled = await location.serviceEnabled();
     if (!_serviceEnabled) {
       _serviceEnabled = await location.requestService();
@@ -36,8 +33,6 @@ class _GPSState extends State<GPS> {
         return;
       }
     }
-    // _locationData = await location.getLocation();
-
     var ourLocation = await location.getLocation();
     setState(() {
       currentLocation = LatLng(ourLocation.latitude, ourLocation.longitude);
@@ -85,7 +80,6 @@ class _GPSState extends State<GPS> {
                   builder: (ctx) => new Container(
                     child: Image.network(
                         'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png'),
-                    // child: new FlutterLogo(),
                   ),
                 ),
               ],

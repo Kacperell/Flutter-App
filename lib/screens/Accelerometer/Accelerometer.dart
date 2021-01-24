@@ -45,10 +45,6 @@ class _AccelerometerState extends State<Accelerometer> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text('Accelerometer: $accelerometer'),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.all(8.0),
-              //   child: Text('UserAccelerometer: $userAccelerometer'),
-              // ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text('Gyroscope: $gyroscope'),

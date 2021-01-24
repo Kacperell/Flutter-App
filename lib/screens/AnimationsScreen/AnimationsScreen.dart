@@ -86,7 +86,6 @@ class _AnimationsScreenState extends State<AnimationsScreen>
                     child: Container(
                         width: 48.0, height: 48.0, color: Colors.yellow[600]),
                   );
-                  // )
                 }),
           ),
           Padding(
@@ -102,7 +101,6 @@ class _AnimationsScreenState extends State<AnimationsScreen>
                     child: Container(
                         width: 48.0, height: 48.0, color: Colors.green[600]),
                   );
-                  // )
                 }),
           ),
           Padding(

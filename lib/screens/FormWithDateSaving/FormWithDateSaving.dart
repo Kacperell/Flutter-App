@@ -28,12 +28,10 @@ class _FormWithDateSavingState extends State<FormWithDateSaving> {
               builder: (context) => Home(),
             ),
           );
-
           return false;
         },
         child: Scaffold(
           appBar: AppBar(
-            // backgroundColor: Colors.blue[900],
             title: Text(widget._title),
           ),
           body: ListView(
@@ -45,14 +43,12 @@ class _FormWithDateSavingState extends State<FormWithDateSaving> {
               Container(
                 margin: const EdgeInsets.only(left: 80.0, right: 80.0),
                 child: FutureBuilder(
-                    // future: notes,
                     future: NotesProvider.getNotes(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         final notes = snapshot.data;
                         print(notes);
                         return ListView.builder(
-                          // scrollDirection: Axis.vertical,
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
                             return Column(
@@ -116,7 +112,6 @@ class FormNote extends StatefulWidget {
   FormNote(
     this._refresh,
   );
-
   @override
   _FormNoteState createState() => _FormNoteState();
 }
@@ -125,31 +120,24 @@ enum SingingCharacter { radio1, radio2 }
 
 class _FormNoteState extends State<FormNote> {
   String selected;
-
   final myController = TextEditingController();
-
   String selectvalue;
   bool check1 = false;
   bool check2 = false;
   bool check3 = false;
   SingingCharacter _radioValue = SingingCharacter.radio1;
-
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
           TextField(
             decoration: InputDecoration(
-              // hintText: 'Wprowadź notatkę',
               labelText: 'Wprowadź notatkę',
             ),
             controller: myController,
           ),
           DropdownButtonFormField<String>(
-            // value: selected,
-            // controller: myController,
             decoration: InputDecoration(
-              // filled: true,
               labelText: 'Select value',
             ),
             items: ["A", "B", "C"]
@@ -159,14 +147,12 @@ class _FormNoteState extends State<FormNote> {
                     ))
                 .toList(),
             onChanged: (value) {
-              // selectvalue = value;
               setState(() => selectvalue = value);
             },
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              // [Monday] checkbox
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -181,7 +167,6 @@ class _FormNoteState extends State<FormNote> {
                   ),
                 ],
               ),
-              // [Tuesday] checkbox
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -196,7 +181,6 @@ class _FormNoteState extends State<FormNote> {
                   ),
                 ],
               ),
-              // [Wednesday] checkbox
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -246,37 +230,22 @@ class _FormNoteState extends State<FormNote> {
             textColor: Colors.white,
             padding: EdgeInsets.all(8.0),
             onPressed: () {
-              //dodaj do bazy
-
-              print(check1);
-              print(check2);
               String checkboxValues = '';
               if (check1) checkboxValues = checkboxValues + 'Check 1 ';
               if (check2) checkboxValues = checkboxValues + 'Check 2 ';
               if (check3) checkboxValues = checkboxValues + 'Check 3 ';
-
               String radioValue = '';
               if (_radioValue == SingingCharacter.radio1) {
                 radioValue = 'Radio 1';
               } else {
                 radioValue = 'Radio 2';
               }
-
-              print(checkboxValues);
-              print(selectvalue);
-              print(radioValue);
-
               if (myController.text == '' || selectvalue == null) {
-                //jesli pusta notatka lub nie wybrany select
-                print('nope');
                 return;
               }
-
               NotesProvider.insertNote(myController.text, selectvalue,
                   checkboxValues, radioValue); //adding note to sqldb
               myController.text = ''; //clear input
-
-              // notes = NotesProvider.getNotes();
               widget._refresh();
             },
             child: Text('Dodaj notatkę do bazy'),

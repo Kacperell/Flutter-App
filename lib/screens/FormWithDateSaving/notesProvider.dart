@@ -11,8 +11,6 @@ class NotesProvider {
   static Future open() async {
     db = await openDatabase(join(await getDatabasesPath(), 'notes.db'),
         version: 1, onCreate: (db, version) async {
-      print("create dbbb!");
-
       await db.execute('''
         create table $table ( 
           $columnId integer primary key autoincrement, 
@@ -22,7 +20,6 @@ class NotesProvider {
           radioValue text 
           )
         ''');
-
       db.insert('$table', {
         '$columnTitle': 'Example',
         'selectValue': 'C',
@@ -34,10 +31,6 @@ class NotesProvider {
 
   static Future insertNote(
       noteText, noteSelect, noteCheckbox, noteRadio) async {
-    // await db.insert('Notes', word);
-
-    // db.insert('$table', {'$columnTitle': noteText});
-
     db.insert('$table', {
       '$columnTitle': noteText,
       'selectValue': noteSelect,
@@ -51,8 +44,6 @@ class NotesProvider {
       await open();
     }
     var notes = await db.rawQuery('SELECT * FROM "Notes"');
-    print('-----DBNOTES---------');
-
     return await db.rawQuery('SELECT * FROM "Notes"');
   }
 

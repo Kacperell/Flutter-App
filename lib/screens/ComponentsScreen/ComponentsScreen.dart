@@ -5,7 +5,6 @@ import 'package:app/screens/ComponentsScreen/ComponentsScreen2.dart';
 class ComponentsScreen extends StatefulWidget {
   String _title;
   ComponentsScreen(this._title);
-
   @override
   _ComponentsScreenState createState() => _ComponentsScreenState();
 }
